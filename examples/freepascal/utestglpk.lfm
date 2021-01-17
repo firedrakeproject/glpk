@@ -1,0 +1,30 @@
+object Form1: TForm1
+  Left = 459
+  Height = 161
+  Top = 250
+  Width = 355
+  Caption = 'Using GLPK from freepascal'
+  ClientHeight = 161
+  ClientWidth = 355
+  LCLVersion = '2.0.8.0'
+  object btExample1: TButton
+    Left = 40
+    Height = 33
+    Top = 24
+    Width = 159
+    AutoSize = True
+    Caption = 'Example: 25fv47.mps'
+    OnClick = btExample1Click
+    TabOrder = 0
+  end
+  object btExample2: TButton
+    Left = 40
+    Height = 33
+    Top = 72
+    Width = 173
+    AutoSize = True
+    Caption = 'Brief_Example_doc_1.3'
+    OnClick = btExample2Click
+    TabOrder = 1
+  end
+end
