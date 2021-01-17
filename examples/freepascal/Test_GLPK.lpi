@@ -51,16 +51,11 @@
   <CompilerOptions>
     <Version Value="11"/>
     <Target>
-      <Filename Value="$(SimSEE)/bin/Test_GLPK"/>
+      <Filename Value="Test_GLPK"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <UnitOutputDirectory Value="$(SimSEE)/ppus/testglpk"/>
     </SearchPaths>
-    <Conditionals Value="if SrcOS='win' then
-   SimSEE := 'c:\SimSEE'
-else
-   SimSEE := GetEnv('HOME')+'/SimSEE';"/>
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="False"/>

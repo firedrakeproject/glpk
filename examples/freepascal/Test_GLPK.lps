@@ -22,10 +22,10 @@
       </Unit1>
       <Unit2>
         <Filename Value="glpk.pp"/>
-        <UnitName Value="glpk_rch"/>
+        <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="62" Y="18"/>
-        <UsageCount Value="10"/>
+        <CursorPos Y="18"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit2>
     </Units>
