@@ -10,14 +10,7 @@ interface
     {$ENDIF}
 {
   Translated from glpk.h by Ruben Chaer@20201216
-  con la ayuda de h2pas de freepascal
-
-Instalación de la librería glpk
-En ubuntu ejcutar
-  sudo apt install libglpk-dev
-
-En windows copiar glpk_4_65.dll al direcotrio de ejecución
-
+  with the help of h2pas program.
 }
 
   Type
@@ -514,7 +507,7 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   { simple rounding heuristic  }
 { if 1 /* 24/X-2015; not documented--should not be used */}
   { use existing solution  }
-(* Const before type ignored *)
+
   { filename to save every new solution  }
   { use alien solver  }
 { endif}
@@ -643,11 +636,11 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_create_prob: Pglp_prob;
 
   { create problem object  }
-(* Const before type ignored *)
+
   procedure glp_set_prob_name(P:Pglp_prob; name:Pchar);
 
   { assign (change) problem name  }
-(* Const before type ignored *)
+
   procedure glp_set_obj_name(P:Pglp_prob; name:Pchar);
 
   { assign (change) objective function name  }
@@ -660,11 +653,11 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_add_cols(P:Pglp_prob; ncs:longint):longint;
 
   { add new columns to problem object  }
-(* Const before type ignored *)
+
   procedure glp_set_row_name(P:Pglp_prob; i:longint; name:Pchar);
 
   { assign (change) row name  }
-(* Const before type ignored *)
+
   procedure glp_set_col_name(P:Pglp_prob; j:longint; name:Pchar);
 
   { assign (change) column name  }
@@ -677,35 +670,35 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_set_obj_coef(P:Pglp_prob; j:longint; coef:double);
 
   { set (change) obj. coefficient or constant term  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   procedure glp_set_mat_row(P:Pglp_prob; i:longint; len:longint; ind:Plongint; val:Pdouble);
 
   { set (replace) row of the constraint matrix  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   procedure glp_set_mat_col(P:Pglp_prob; j:longint; len:longint; ind:Plongint; val:Pdouble);
 
   { set (replace) column of the constraint matrix  }
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
   procedure glp_load_matrix(P:Pglp_prob; ne:longint; ia:Plongint; ja:Plongint; ar:Pdouble);
 
   { load (replace) the whole constraint matrix  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_check_dup(m:longint; n:longint; ne:longint; ia:Plongint; ja:Plongint):longint;
 
   { check for duplicate elements in sparse matrix  }
   procedure glp_sort_matrix(P:Pglp_prob);
 
   { sort elements of the constraint matrix  }
-(* Const before type ignored *)
+
   procedure glp_del_rows(P:Pglp_prob; nrs:longint; num:Plongint);
 
   { delete specified rows from problem object  }
-(* Const before type ignored *)
+
   procedure glp_del_cols(P:Pglp_prob; ncs:longint; num:Plongint);
 
   { delete specified columns from problem object  }
@@ -718,11 +711,11 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_delete_prob(P:Pglp_prob);
 
   { delete problem object  }
-(* Const before type ignored *)
+
   function glp_get_prob_name(P:Pglp_prob): Pchar;
 
   { retrieve problem name  }
-(* Const before type ignored *)
+
   function glp_get_obj_name(P:Pglp_prob): Pchar;
 
   { retrieve objective function name  }
@@ -735,11 +728,11 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_get_num_cols(P:Pglp_prob):longint;
 
   { retrieve number of columns  }
-(* Const before type ignored *)
+
   function glp_get_row_name(P:Pglp_prob; i:longint): Pchar;
 
   { retrieve row name  }
-(* Const before type ignored *)
+
   function glp_get_col_name(P:Pglp_prob; j:longint): Pchar;
 
   { retrieve column name  }
@@ -776,11 +769,11 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_create_index(P:Pglp_prob);
 
   { create the name index  }
-(* Const before type ignored *)
+
   function glp_find_row(P:Pglp_prob; name:Pchar):longint;
 
   { find row by its name  }
-(* Const before type ignored *)
+
   function glp_find_col(P:Pglp_prob; name:Pchar):longint;
 
   { find column by its name  }
@@ -820,11 +813,11 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_cpx_basis(P:Pglp_prob);
 
   { construct Bixby's initial LP basis  }
-(* Const before type ignored *)
+
   function glp_simplex(P:Pglp_prob; parm:Pglp_smcp):longint;
 
   { solve LP problem with the simplex method  }
-(* Const before type ignored *)
+
   function glp_exact(P:Pglp_prob; parm:Pglp_smcp):longint;
 
   { solve LP problem in exact arithmetic  }
@@ -876,7 +869,7 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
 
   { set simplex solver iteration count  }
 { endif}
-(* Const before type ignored *)
+
 
   function glp_interior(P:Pglp_prob; parm:Pglp_iptcp):longint;
 
@@ -914,7 +907,7 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_get_num_bin(P:Pglp_prob):longint;
 
   { retrieve number of binary columns  }
-(* Const before type ignored *)
+
   function glp_intopt(P:Pglp_prob; parm:Pglp_iocp):longint;
 
   { solve MIP problem with the branch-and-bound method  }
@@ -937,44 +930,44 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
               re_max:Pdouble; re_ind:Plongint);
 
   { check feasibility/optimality conditions  }
-(* Const before type ignored *)
+
   function glp_print_sol(P:Pglp_prob; fname:Pchar):longint;
 
   { write basic solution in printable format  }
-(* Const before type ignored *)
+
   function glp_read_sol(P:Pglp_prob; fname:Pchar):longint;
 
   { read basic solution from text file  }
-(* Const before type ignored *)
+
   function glp_write_sol(P:Pglp_prob; fname:Pchar):longint;
 
   { write basic solution to text file  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_print_ranges(P:Pglp_prob; len:longint; list:Plongint; flags:longint; fname:Pchar):longint;
 
   { print sensitivity analysis report  }
-(* Const before type ignored *)
+
   function glp_print_ipt(P:Pglp_prob; fname:Pchar):longint;
 
   { write interior-point solution in printable format  }
-(* Const before type ignored *)
+
   function glp_read_ipt(P:Pglp_prob; fname:Pchar):longint;
 
   { read interior-point solution from text file  }
-(* Const before type ignored *)
+
   function glp_write_ipt(P:Pglp_prob; fname:Pchar):longint;
 
   { write interior-point solution to text file  }
-(* Const before type ignored *)
+
   function glp_print_mip(P:Pglp_prob; fname:Pchar):longint;
 
   { write MIP solution in printable format  }
-(* Const before type ignored *)
+
   function glp_read_mip(P:Pglp_prob; fname:Pchar):longint;
 
   { read MIP solution from text file  }
-(* Const before type ignored *)
+
   function glp_write_mip(P:Pglp_prob; fname:Pchar):longint;
 
   { write MIP solution to text file  }
@@ -990,7 +983,7 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_get_bfcp(P:Pglp_prob; parm:Pglp_bfcp);
 
   { retrieve LP basis factorization control parameters  }
-(* Const before type ignored *)
+
   procedure glp_set_bfcp(P:Pglp_prob; parm:Pglp_bfcp);
 
   { change LP basis factorization control parameters  }
@@ -1024,14 +1017,14 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_transform_col(P:Pglp_prob; len:longint; ind:Plongint; val:Pdouble):longint;
 
   { transform explicitly specified column  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_prim_rtest(P:Pglp_prob; len:longint; ind:Plongint; val:Pdouble; dir:longint; 
              eps:double):longint;
 
   { perform primal ratio test  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_dual_rtest(P:Pglp_prob; len:longint; ind:Plongint; val:Pdouble; dir:longint; 
              eps:double):longint;
 
@@ -1111,9 +1104,9 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_ios_pool_size(T:Pglp_tree):longint;
 
   { determine current size of the cut pool  }
-(* Const before type ignored *)
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
+
   function glp_ios_add_row(T:Pglp_tree; name:Pchar; klass:longint; flags:longint; len:longint; 
              ind:Plongint; val:Pdouble; _type:longint; rhs:double):longint;
 
@@ -1133,7 +1126,7 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_ios_select_node(T:Pglp_tree; p:longint);
 
   { select subproblem to continue the search  }
-(* Const before type ignored *)
+
   function glp_ios_heur_sol(T:Pglp_tree; x:Pdouble):longint;
 
   { provide solution found by heuristic  }
@@ -1187,34 +1180,34 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_init_mpscp(parm:Pglp_mpscp);
 
   { initialize MPS format control parameters  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_read_mps(P:Pglp_prob; fmt:longint; parm:Pglp_mpscp; fname:Pchar):longint;
 
   { read problem data in MPS format  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_write_mps(P:Pglp_prob; fmt:longint; parm:Pglp_mpscp; fname:Pchar):longint;
 
   { write problem data in MPS format  }
   procedure glp_init_cpxcp(parm:Pglp_cpxcp);
 
   { initialize CPLEX LP format control parameters  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_read_lp(P:Pglp_prob; parm:Pglp_cpxcp; fname:Pchar):longint;
 
   { read problem data in CPLEX LP format  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_write_lp(P:Pglp_prob; parm:Pglp_cpxcp; fname:Pchar):longint;
 
   { write problem data in CPLEX LP format  }
-(* Const before type ignored *)
+
   function glp_read_prob(P:Pglp_prob; flags:longint; fname:Pchar):longint;
 
   { read problem data in GLPK format  }
-(* Const before type ignored *)
+
   function glp_write_prob(P:Pglp_prob; flags:longint; fname:Pchar):longint;
 
   { write problem data in GLPK format  }
@@ -1224,15 +1217,15 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_mpl_init_rand(tran:Pglp_tran; seed:longint);
 
   { initialize pseudo-random number generator  }
-(* Const before type ignored *)
+
   function glp_mpl_read_model(tran:Pglp_tran; fname:Pchar; skip:longint):longint;
 
   { read and translate model section  }
-(* Const before type ignored *)
+
   function glp_mpl_read_data(tran:Pglp_tran; fname:Pchar):longint;
 
   { read and translate data section  }
-(* Const before type ignored *)
+
   function glp_mpl_generate(tran:Pglp_tran; fname:Pchar):longint;
 
   { generate the model  }
@@ -1245,14 +1238,14 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_mpl_free_wksp(tran:Pglp_tran);
 
   { free the MathProg translator workspace  }
-(* Const before type ignored *)
+
   function glp_read_cnfsat(P:Pglp_prob; fname:Pchar):longint;
 
   { read CNF-SAT problem data in DIMACS format  }
   function glp_check_cnfsat(P:Pglp_prob):longint;
 
   { check for CNF-SAT problem instance  }
-(* Const before type ignored *)
+
   function glp_write_cnfsat(P:Pglp_prob; fname:Pchar):longint;
 
   { write CNF-SAT problem data in DIMACS format  }
@@ -1265,29 +1258,29 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_init_env:longint;
 
   { initialize GLPK environment  }
-(* Const before type ignored *)
+
   function glp_version:Pchar;
 
   { determine library version  }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
   function glp_config(option:Pchar):Pchar;
 
   { determine library configuration  }
   function glp_free_env:longint;
 
   { free GLPK environment  }
-(* Const before type ignored *)
+
   procedure glp_puts(s:Pchar);
 
   (*???rch
   { write string on terminal  }
-(* Const before type ignored *)
+
   procedure glp_printf(fmt:Pchar; args:array of const);
 
 *)
   { write formatted output on terminal  }
-(* Const before type ignored *)
+
 (*???rch
   procedure glp_vprintf(fmt:Pchar; arg:va_list);
 *)
@@ -1295,11 +1288,11 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_term_out(flag:longint):longint;
 
   { enable/disable terminal output  }
-(* Const before type ignored *)
+
   procedure glp_term_hook(func: TTermHook; info:pointer);
 
   { install hook to intercept terminal output  }
-(* Const before type ignored *)
+
   function glp_open_tee(name:Pchar):longint;
 
   { start copying terminal output to text file  }
@@ -1308,7 +1301,7 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   { stop copying terminal output to text file  }
 {$ifndef GLP_ERRFUNC_DEFINED}
 {$define GLP_ERRFUNC_DEFINED}  
-(* Const before type ignored *)
+
 
   type
 
@@ -1320,7 +1313,7 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_error : longint; { return type might be wrong }
 *)
 
-(* Const before type ignored *)
+
   function glp_error_( file_:Pchar; line:longint):glp_errfunc;
 
   { display fatal error message and terminate execution  }
@@ -1332,8 +1325,8 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
 { endif}
   { ojo comento esto porque no sé como traducirlo }
   {define glp_assert(expr)  ((void)((expr) || (glp_assert_( #expr, __FILE__, __LINE__), 1))) }
-(* Const before type ignored *)
-(* Const before type ignored *)
+
+
 
   procedure glp_assert_(expr:Pchar; file_:Pchar; line:longint);
 
@@ -1381,21 +1374,21 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_create_graph(v_size:longint; a_size:longint):Pglp_graph;
 
   { create graph  }
-(* Const before type ignored *)
+
   procedure glp_set_graph_name(G:Pglp_graph; name:Pchar);
 
   { assign (change) graph name  }
   function glp_add_vertices(G:Pglp_graph; nadd:longint):longint;
 
   { add new vertices to graph  }
-(* Const before type ignored *)
+
   procedure glp_set_vertex_name(G:Pglp_graph; i:longint; name:Pchar);
 
   { assign (change) vertex name  }
   function glp_add_arc(G:Pglp_graph; i:longint; j:longint):Pglp_arc;
 
   { add new arc to graph  }
-(* Const before type ignored *)
+
   procedure glp_del_vertices(G:Pglp_graph; ndel:longint; num:Plongint);
 
   { delete vertices from graph  }
@@ -1411,18 +1404,18 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   procedure glp_create_v_index(G:Pglp_graph);
 
   { create vertex name index  }
-(* Const before type ignored *)
+
   function glp_find_vertex(G:Pglp_graph; name:Pchar):longint;
 
   { find vertex by its name  }
   procedure glp_delete_v_index(G:Pglp_graph);
 
   { delete vertex name index  }
-(* Const before type ignored *)
+
   function glp_read_graph(G:Pglp_graph; fname:Pchar):longint;
 
   { read graph from plain text file  }
-(* Const before type ignored *)
+
   function glp_write_graph(G:Pglp_graph; fname:Pchar):longint;
 
   { write graph to plain text file  }
@@ -1472,52 +1465,52 @@ En windows copiar glpk_4_65.dll al direcotrio de ejecución
   function glp_cpp(G:Pglp_graph; v_t:longint; v_es:longint; v_ls:longint):double;
 
   { solve critical path problem  }
-(* Const before type ignored *)
+
   function glp_read_mincost(G:Pglp_graph; v_rhs:longint; a_low:longint; a_cap:longint; a_cost:longint; 
              fname:Pchar):longint;
 
   { read min-cost flow problem data in DIMACS format  }
-(* Const before type ignored *)
+
   function glp_write_mincost(G:Pglp_graph; v_rhs:longint; a_low:longint; a_cap:longint; a_cost:longint; 
              fname:Pchar):longint;
 
   { write min-cost flow problem data in DIMACS format  }
-(* Const before type ignored *)
+
   function glp_read_maxflow(G:Pglp_graph; s:Plongint; t:Plongint; a_cap:longint; fname:Pchar):longint;
 
   { read maximum flow problem data in DIMACS format  }
-(* Const before type ignored *)
+
   function glp_write_maxflow(G:Pglp_graph; s:longint; t:longint; a_cap:longint; fname:Pchar):longint;
 
   { write maximum flow problem data in DIMACS format  }
-(* Const before type ignored *)
+
   function glp_read_asnprob(G:Pglp_graph; v_set:longint; a_cost:longint; fname:Pchar):longint;
 
   { read assignment problem data in DIMACS format  }
-(* Const before type ignored *)
+
   function glp_write_asnprob(G:Pglp_graph; v_set:longint; a_cost:longint; fname:Pchar):longint;
 
   { write assignment problem data in DIMACS format  }
-(* Const before type ignored *)
+
   function glp_read_ccdata(G:Pglp_graph; v_wgt:longint; fname:Pchar):longint;
 
   { read graph in DIMACS clique/coloring format  }
-(* Const before type ignored *)
+
   function glp_write_ccdata(G:Pglp_graph; v_wgt:longint; fname:Pchar):longint;
 
   { write graph in DIMACS clique/coloring format  }
-(* Const before type ignored *)
+
   function glp_netgen(G:Pglp_graph; v_rhs:longint; a_cap:longint; a_cost:longint; parm: TArr16LongInt ):longint;
 
   { Klingman's network problem generator  }
   procedure glp_netgen_prob(nprob:longint; parm:TArr16LongInt);
 
   { Klingman's standard network problem instance  }
-(* Const before type ignored *)
+
   function glp_gridgen(G:Pglp_graph; v_rhs:longint; a_cap:longint; a_cost:longint; parm: TArr14LongInt):longint;
 
   { grid-like network problem generator  }
-(* Const before type ignored *)
+
   function glp_rmfgen(G:Pglp_graph; s:Plongint; t:Plongint; a_cap:longint; parm: TArr5LongInt ):longint;
 
   { Goldfarb's maximum flow problem generator  }

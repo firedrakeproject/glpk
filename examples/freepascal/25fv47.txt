@@ -1,0 +1,32 @@
+Problem:    
+Rows:       0
+Columns:    0
+Non-zeros:  0
+Status:     OPTIMAL
+Objective:  0 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 0,00e+00 on row 0
+        max.rel.err = 0,00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0,00e+00 on row 0
+        max.rel.err = 0,00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 0,00e+00 on column 0
+        max.rel.err = 0,00e+00 on column 0
+        High quality
+
+KKT.DB: max.abs.err = 0,00e+00 on row 0
+        max.rel.err = 0,00e+00 on row 0
+        High quality
+
+End of output

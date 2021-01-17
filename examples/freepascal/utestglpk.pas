@@ -1,5 +1,7 @@
 unit utestglpk;
-
+(*
+Examples of use of glpk from freepascal.
+*)
 {$mode objfpc}{$H+}
 
 interface
@@ -12,10 +14,10 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    Button1: TButton;
-    Button2: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    btExample1: TButton;
+    btExample2: TButton;
+    procedure btExample1Click(Sender: TObject);
+    procedure btExample2Click(Sender: TObject);
   private
 
   public
@@ -31,7 +33,7 @@ implementation
 
 { TForm1 }
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.btExample1Click(Sender: TObject);
 var
   P: Pglp_prob;
 begin
@@ -43,7 +45,7 @@ begin
     glp_delete_prob(P);
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure TForm1.btExample2Click(Sender: TObject);
 var
   lp: Pglp_prob;
   ia: array[0..1+1000] of integer;
